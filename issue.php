@@ -2,15 +2,15 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Index</title>
+  <title>Issue</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body style = "padding:10px;">
   <br>
   <nav class="nav nav-pills nav-justified">
     <a class="nav-item nav-link" href="index.php">Home</a>
-    <a class="nav-item nav-link" href="addemployee.php">Add Employee</a>
-    <a class="nav-item nav-link" href="adddevice.php">Add Device</a>
+    <a class="nav-item nav-link" href="addemployee.php">Employees</a>
+    <a class="nav-item nav-link" href="adddevice.php">Devices</a>
     <a class="nav-item nav-link active" href="issue.php">Issue</a>
     <a class="nav-item nav-link" href="return.php">Return</a>
   </nav>
