@@ -26,7 +26,7 @@
       <input type="text" name="designation" value="" placeholder="designation">
       <input type="number" name="raxno" value="" placeholder="raxno">
       <input type="text" name="department" value="" placeholder="department">
-      <input type="submit" name="submit" value="Add Row">
+      <input type="submit" name="submit" value="Add Employee`">
     </form>
 
 <?php

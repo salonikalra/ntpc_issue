@@ -26,7 +26,7 @@
       <input type="text" name="type" value="" placeholder="type">
       <label>Is it returnable</label>
       <input type="checkbox" name="returnable" value=1>
-      <input type="submit" name="submit" value="Add Row">
+      <input type="submit" name="submit" value="Add Device">
     </form>
 
 
@@ -47,7 +47,7 @@ if($conn){
     $type = $_POST['type'];
     $returnable = isset($_POST['returnable']) ? "Yes" : "No";
 
-    $res2 = mysqli_query($conn, "INSERT INTO `Device`(`Company`, `Type`, `Available`, `Returnable`) VALUES ('$company', '$type', 1, $returnable) ");
+    $res2 = mysqli_query($conn, "INSERT INTO `Device`(`Company`, `Type`, `Available`, `Returnable`) VALUES ('$company', '$type', 'Yes', '$returnable') ");
 
     if($res2){
       echo "Data entered in database successfully";
@@ -60,7 +60,7 @@ if($conn){
   echo "<br>";
 
   //TO FETCH DATA
-  $res = mysqli_query($conn, "SELECT * FROM Device ORDER BY DeviceNo");
+  $res = mysqli_query($conn, "SELECT * FROM Device ORDER BY Type");
   if(mysqli_num_rows($res)){
     $x = mysqli_fetch_all($res);
     echo "<h2>Database</h2>";
