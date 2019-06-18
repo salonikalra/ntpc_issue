@@ -64,10 +64,14 @@ if($conn){
   if(mysqli_num_rows($res)){
     $x = mysqli_fetch_all($res);
     echo "<h2>Database</h2>";
-    echo "<table border = 1><th>Device No</th>  <th>Company</th>   <th>Type</th>   <th>Available?</th>   <th>Returnable?</th>";
+    echo "<table border = 1><th>Device No</th>  <th>Type</th>   <th>Company</th>   <th>Available?</th>   <th>Returnable?</th>";
     for($i = 0; $i < sizeof($x); $i++){
 
-      print_r('<tr>'.'<td>'.$x[$i][0].'</td>'.'<td>'.$x[$i][1].'</td>'.'<td>'.$x[$i][2].'</td>'.'<td>'.$x[$i][3].'</td>'.'<td>'.$x[$i][4].'</td>'.'</tr>');
+      print_r('<tr>'.'<td>'.$x[$i][0].'</td>'
+              .'<td>'.$x[$i][2].'</td>'
+              .'<td>'.$x[$i][1].'</td>'
+              .'<td>'.$x[$i][3].'</td>'
+              .'<td>'.$x[$i][4].'</td>'.'</tr>');
     }
     echo "</table>";
   }

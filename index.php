@@ -38,17 +38,17 @@ if($conn){
                               FROM Device
                               WHERE Device.Available='No'
                               GROUP BY Device.Type, Device.Company");
-  //Total Devices
-  $res2 = mysqli_query($conn, "SELECT COUNT(DeviceNo), Type, Company
-                              FROM Device
-                              GROUP BY Type, Company;");
-  if(mysqli_num_rows($res)){
-    if(mysqli_num_rows($res2)){
+  // //Total Devices
+  // $res2 = mysqli_query($conn, "SELECT COUNT(DeviceNo), Type, Company
+  //                             FROM Device
+  //                             GROUP BY Type, Company;");
+  // if(mysqli_num_rows($res)){
+    if(mysqli_num_rows($res)){
 
 
       $stock = mysqli_fetch_all($res);
       $issued = mysqli_fetch_all($res1);
-      $total = mysqli_fetch_all($res2);
+      // $total = mysqli_fetch_all($res2);
 
 
       echo "<h2>In Stock</h2>";
@@ -67,15 +67,15 @@ if($conn){
       echo "</table>";
 
 
-      echo "<h2>Total Devices</h2>";
-      echo "<table border = 1><th>Count</th>  <th>Type</th>  <th>Company</th>";
-      for($i = 0; $i < sizeof($total); $i++){
-        print_r('<tr>'.'<td>'.$total[$i][0].'</td>'.'<td>'.$total[$i][1].'</td>'.'<td>'.$total[$i][2  ].'</td>'.'</tr>');
-      }
-      echo "</table>";
+      // echo "<h2>Total Devices</h2>";
+      // echo "<table border = 1><th>Count</th>  <th>Type</th>  <th>Company</th>";
+      // for($i = 0; $i < sizeof($total); $i++){
+      //   print_r('<tr>'.'<td>'.$total[$i][0].'</td>'.'<td>'.$total[$i][1].'</td>'.'<td>'.$total[$i][2  ].'</td>'.'</tr>');
+      // }
+      // echo "</table>";
 
 
-    }
+    // }
   }
 }
 
