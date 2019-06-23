@@ -44,7 +44,9 @@ if($conn){
   if(isset($_POST['submit'])){
 
     $company = $_POST['company'];
+    $company = mysqli_real_escape_string($conn,$company);
     $type = $_POST['type'];
+    $type = mysqli_real_escape_string($conn,$type);
     $returnable = isset($_POST['returnable']) ? "Yes" : "No";
 
     $res2 = mysqli_query($conn, "INSERT INTO `Device`(`Company`, `Type`, `Available`, `Returnable`) VALUES ('$company', '$type', 'Yes', '$returnable') ");
