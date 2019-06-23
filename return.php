@@ -47,9 +47,12 @@ if($conn){
   if(isset($_POST['submit'])){
 
     $date1 = strtotime($_POST["date1"]);
+    $date1 = mysqli_real_escape_string($conn , $date1);
     $date1 = date('Y-m-d', $date1);
     $employeeno = $_POST['employeeno'];
+    $employeeno = mysqli_real_escape_string($conn , $employeeno);
     $deviceno = $_POST['deviceno'];
+    $deviceno = mysqli_real_escape_string($conn , $deviceno);
 
     #CHECKING IF THE DEVICE IS RETURNABLE
     $res0 = mysqli_query($conn, "SELECT DeviceNo FROM Device WHERE DeviceNo=$deviceno AND Returnable='Yes'");
