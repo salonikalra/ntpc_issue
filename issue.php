@@ -26,7 +26,7 @@
       <label>Date of issue</label>
       <input type="date" name="date1" value="">
       <input type="number" name="employeeno" value="" placeholder="employeeno">
-      <input type="number" name="deviceno" value="" placeholder="deviceno">
+      <input type="number" name="deviceno" value="" placeholder="deviceno(trailing integer)">
 
       <input type="submit" name="submit" value="Issue">
 

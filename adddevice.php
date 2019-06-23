@@ -67,7 +67,7 @@ if($conn){
     echo "<table border = 1><th>Device No</th>  <th>Type</th>   <th>Company</th>   <th>Available?</th>   <th>Returnable?</th>";
     for($i = 0; $i < sizeof($x); $i++){
 
-      print_r('<tr>'.'<td>'.$x[$i][0].'</td>'
+      print_r('<tr>'.'<td>'.substr($x[$i][2], 0, 1).substr($x[$i][1], 0, 1).$x[$i][0].'</td>'
               .'<td>'.$x[$i][2].'</td>'
               .'<td>'.$x[$i][1].'</td>'
               .'<td>'.$x[$i][3].'</td>'
