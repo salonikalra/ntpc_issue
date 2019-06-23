@@ -29,7 +29,10 @@ if($conn){
 
   if(isset($_POST["submit"])){
     $givenuser = $_POST["name"];
+    $givenuser = mysqli_real_escape_string($conn,$givenuser);
     $givenpassword = $_POST["password"];
+    $givenpassword = mysqli_real_escape_string($conn,$givenpassword);
+    $givenpassword = password_hash($givenpassword,PASSWORD_BCRYPT);
 
     $res = mysqli_query($conn, "SELECT *
                                 FROM User
@@ -41,7 +44,7 @@ if($conn){
       $dbuser = $x[0][0];
       $dbpassword = $x[0][1];
 
-      if($givenpassword==$dbpassword){
+      if(password_verify($dbpassword,$givenpassword)){
         header('Location:index.php');
       }
       else{
