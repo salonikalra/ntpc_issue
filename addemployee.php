@@ -43,9 +43,13 @@ if($conn){
   if(isset($_POST['submit'])){
 
     $name = $_POST['name'];
+    $name = mysqli_real_escape_string($conn,$name);
     $designation = $_POST['designation'];
+    $designation = mysqli_real_escape_string($conn,$designation);
     $raxno = $_POST['raxno'];
+    $raxno = mysqli_real_escape_string($conn,$raxno);
     $department = $_POST['department'];
+    $department = mysqli_real_escape_string($conn,$department);
 
     $res2 = mysqli_query($conn, "INSERT INTO Employee(name, designation, raxno, department) VALUES('$name', '$designation', $raxno, '$department' )");
 
