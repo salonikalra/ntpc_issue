@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 18, 2019 at 01:29 AM
+-- Generation Time: Jun 25, 2019 at 01:08 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -41,8 +41,8 @@ CREATE TABLE `Device` (
 --
 
 INSERT INTO `Device` (`DeviceNo`, `Company`, `Type`, `Available`, `Returnable`) VALUES
-(1, 'Dell', 'Laptop', 'No', 'Yes'),
-(2, 'Lenovo', 'Laptop', 'No', 'Yes'),
+(1, 'Dell', 'Laptop', 'Yes', 'Yes'),
+(2, 'Lenovo', 'Laptop', 'Yes', 'Yes'),
 (3, 'Apple', 'Laptop', 'Yes', 'Yes'),
 (4, 'Dell', 'Keyboard', 'Yes', 'Yes'),
 (5, 'Lenovo', 'Keyboard', 'Yes', 'Yes'),
@@ -58,7 +58,13 @@ INSERT INTO `Device` (`DeviceNo`, `Company`, `Type`, `Available`, `Returnable`) 
 (15, 'Apple', 'Projector', 'Yes', 'Yes'),
 (16, 'Dell', 'Hard Disk', 'No', 'No'),
 (17, 'Lenovo', 'Hard Disk', 'No', 'No'),
-(18, 'Apple', 'Hard Disk', 'Yes', 'No');
+(18, 'Apple', 'Hard Disk', 'Yes', 'No'),
+(19, 'Dell', 'Laptop', 'Yes', 'Yes'),
+(20, 'Dell', 'Laptop', 'Yes', 'Yes'),
+(21, 'Dell', 'Laptop', 'Yes', 'Yes'),
+(22, 'Dell', 'Laptop', 'Yes', 'Yes'),
+(23, 'Dell', 'Laptop', 'Yes', 'Yes'),
+(24, 'Dell', 'Laptop', 'Yes', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -106,12 +112,13 @@ CREATE TABLE `Issue` (
 --
 
 INSERT INTO `Issue` (`IssueNo`, `Date`, `EmployeeNo`, `DeviceNo`) VALUES
-(34, '2019-06-17', 1, 1),
-(36, '2019-06-17', 1, 16),
-(37, '2019-06-17', 1, 2),
-(38, '2019-06-17', 1, 17),
-(39, '2019-06-18', 3, 1),
-(40, '2019-06-18', 3, 2);
+(42, '2019-06-18', 1, 16),
+(43, '2019-06-18', 1, 6),
+(44, '2019-06-23', 1, 17),
+(45, '2019-06-24', 1, 19),
+(46, '2019-06-24', 1, 20),
+(47, '2019-06-24', 1, 20),
+(48, '2019-06-24', 1, 19);
 
 -- --------------------------------------------------------
 
@@ -131,8 +138,11 @@ CREATE TABLE `Return1` (
 --
 
 INSERT INTO `Return1` (`ReturnNo`, `Date`, `EmployeeNo`, `DeviceNo`) VALUES
-(36, '2019-06-18', 1, 1),
-(37, '2019-06-18', 1, 2);
+(38, '2019-06-19', 1, 6),
+(39, '2019-06-25', 1, 19),
+(40, '2019-06-24', 1, 20),
+(41, '2019-06-24', 1, 19),
+(42, '2019-06-24', 1, 20);
 
 -- --------------------------------------------------------
 
@@ -198,25 +208,25 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `Device`
 --
 ALTER TABLE `Device`
-  MODIFY `DeviceNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `DeviceNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `Employee`
 --
 ALTER TABLE `Employee`
-  MODIFY `EmployeeNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `EmployeeNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `Issue`
 --
 ALTER TABLE `Issue`
-  MODIFY `IssueNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `IssueNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `Return1`
 --
 ALTER TABLE `Return1`
-  MODIFY `ReturnNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ReturnNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Constraints for dumped tables
