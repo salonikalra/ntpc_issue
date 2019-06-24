@@ -26,7 +26,7 @@
       <label>Date of return</label>
       <input type="date" name="date1" value="">
       <input type="number" name="employeeno" value="" placeholder="employeeno">
-      <input type="number" name="deviceno" value="" placeholder="deviceno(trailing integer)">
+      <input type="text" name="deviceno" value="" placeholder="deviceno">
 
       <input type="submit" name="submit" value="Return">
 
@@ -50,6 +50,7 @@ if($conn){
     $date1 = date('Y-m-d', $date1);
     $employeeno = $_POST['employeeno'];
     $deviceno = $_POST['deviceno'];
+    $deviceno = substr($deviceno, 2);
 
     #CHECKING IF THE DEVICE IS RETURNABLE
     $res0 = mysqli_query($conn, "SELECT DeviceNo FROM Device WHERE DeviceNo=$deviceno AND Returnable='Yes'");
@@ -100,7 +101,7 @@ if($conn){
     echo "<table border = 1><th>Return No</th>  <th>Date of Return</th>   <th>Employee No</th>    <th>Employee Name</th>     <th>Device No</th>   <th>Device Company</th>   <th>Device Type</th>";
     for($i = 0; $i < sizeof($x); $i++){
 
-      print_r('<tr>'.'<td>'.$x[$i][0].'</td>'.'<td>'.$x[$i][1].'</td>'.'<td>'.$x[$i][2].'</td>'.'<td>'.$x[$i][3].'</td>'.'</td>'.'<td>'.$x[$i][4].'</td>'.'</td>'.'<td>'.$x[$i][5].'</td>'.'</td>'.'<td>'.$x[$i][6].'</td>'.'</tr>');
+      print_r('<tr>'.'<td>'.$x[$i][0].'</td>'.'<td>'.$x[$i][1].'</td>'.'<td>'.$x[$i][2].'</td>'.'<td>'.$x[$i][3].'</td>'.'</td>'.'<td>'.substr($x[$i][5], 0, 1).substr($x[$i][6], 0, 1).$x[$i][4].'</td>'.'</td>'.'<td>'.$x[$i][5].'</td>'.'</td>'.'<td>'.$x[$i][6].'</td>'.'</tr>');
     }
     echo "</table>";
   }
