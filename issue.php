@@ -4,8 +4,12 @@
   <meta charset="utf-8">
   <title>Issue</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script type="text/javascript" src="myjs.js"></script>
+
+
 </head>
-<body style = "padding:10px;">
+<body style = "padding:10px;" onload="date1();">
   <br>
   <nav class="nav nav-pills nav-justified">
     <a class="nav-item nav-link" href="index.php">Home</a>
@@ -25,7 +29,7 @@
     <form action="issue.php" method="post">
 
       <label>Date of issue</label>
-      <input type="date" name="date1" value="">
+      <input type="date" name="date1">
       <input type="number" name="employeeno" value="" placeholder="employeeno">
       <input type="text" name="deviceno" value="" placeholder="deviceno">
 
