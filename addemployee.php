@@ -13,6 +13,7 @@
       <a class="nav-item nav-link" href="adddevice.php">Devices</a>
       <a class="nav-item nav-link" href="issue.php">Issue</a>
       <a class="nav-item nav-link" href="return.php">Return</a>
+      <a class="nav-item nav-link" href="report.php">Report</a>
     </nav>
     <br>
     <br>
